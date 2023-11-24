@@ -30,3 +30,4 @@ const questionObj2 =[
     },
    
 ]
+module.exports = {questionObj,questionObj2}
