@@ -2,7 +2,7 @@ const readline = require('readline');
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 class Quiz {
@@ -34,7 +34,7 @@ class Quiz {
 
     const currentQuestion = this.questions[this.currentQuestionIndex];
 
-    rl.question(`${currentQuestion.question}` , (userAnswer) => {
+    rl.question(`${currentQuestion.question}`, (userAnswer) => {
       if (userAnswer.toLowerCase() === currentQuestion.answer.toLowerCase()) {
         console.log('Правильный ответ!');
         this.score++;
@@ -48,7 +48,9 @@ class Quiz {
   }
 
   displayScore() {
-    console.log(`Конец квиза, ${this.playerName}. Ваш счет: ${this.score}/${this.questions.length}`);
+    console.log(
+      `Конец квиза, ${this.playerName}. Ваш счет: ${this.score}/${this.questions.length}`
+    );
   }
 }
 
